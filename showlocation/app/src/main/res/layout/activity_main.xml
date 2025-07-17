@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img"
+    tools:context=".MainActivity">
+
+    <!-- Title for the main activity -->
+
+    <!-- GridLayout for 30 buttons (3x10 grid) -->
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text="Bus Tracker"
+        android:textColor="@color/button_blue"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridLayout
+        android:id="@+id/grid_layout"
+        android:layout_width="218dp"
+        android:layout_height="375dp"
+        android:layout_margin="16dp"
+        android:columnCount="3"
+        android:rowCount="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_text"
+        app:layout_constraintVertical_bias="0.16">
+
+        <!-- Example Button for Bus 1 -->
+
+        <!-- Example Button for Bus 2 -->
+        <Button
+            android:id="@+id/bus1_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_selector"
+            android:padding="16dp"
+            android:text="Bus 1"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/buttonBus28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_selector"
+            android:padding="16dp"
+            android:text="Bus 28"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <!-- Repeat similar buttons for Bus 3 to Bus 30... -->
+
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

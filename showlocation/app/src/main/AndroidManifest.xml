@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions Required for Location and Notifications -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/bus"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Showlocation"
+        tools:targetApi="31">
+
+        <!-- MainActivity: Entry Point of the Application -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- MapActivity: Displaying Map and Handling Bus Location Updates -->
+        <activity
+            android:name=".MapActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- Declaration for Firebase API Key (Google Maps) -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBidSldo_EiT5c_nw7li5TOTVhjjGW_x0Y" />
+
+        <!-- BroadcastReceiver for Resetting Notifications at 23:00 -->
+        <receiver android:name=".ResetNotificationsReceiver" />
+
+    </application>
+</manifest>
